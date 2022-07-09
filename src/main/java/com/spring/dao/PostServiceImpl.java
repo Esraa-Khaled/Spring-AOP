@@ -9,4 +9,9 @@ public class PostServiceImpl implements  PostService{
     public String  allPosts() {
         return "My Posts ..... PostService";
     }
+
+    @Override
+    public String allLikes() {
+        return "PostService ..... Likes";
+    }
 }

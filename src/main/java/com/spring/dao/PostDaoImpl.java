@@ -8,4 +8,9 @@ public class PostDaoImpl implements PostDao{
     public void allPosts() {
         System.out.println("My Posts ..... PostDao");
     }
+
+    @Override
+    public String allLikes() {
+        return "PostDao .... Likes";
+    }
 }
