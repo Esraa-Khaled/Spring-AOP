@@ -9,7 +9,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataBase {
 
-    @Before("execution(public void allPosts())")
+    //this function will be executed each time before allPosts calling
+    // modifiers is optional like public
+    @Before("execution(public void com.spring.dao.PostDao.allPosts())")
     public void connectionDB() {
         System.out.println("Connected !");
     }
