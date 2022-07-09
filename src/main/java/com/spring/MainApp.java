@@ -15,9 +15,8 @@ public class MainApp {
 
         PostDao pd = context.getBean("postDaoImpl", PostDao.class);
         pd.allPosts();
-        pd.allPosts();
 
         PostService ps = context.getBean("postServiceImpl", PostService.class);
-        ps.allPosts();
+        System.out.println(ps.allPosts());
     }
 }
