@@ -29,10 +29,16 @@ public class DataBase {
     */
 
     // if method has params give its qualified paths
+    /*
     @Before("execution(public * all*(com.spring.model.User))")
     public void connectionDB() {
         System.out.println("Connected !");
     }
+    */
 
-
+    // .. means for any param type even if not exist
+    @Before("execution(public * all*(com.spring.model.User, ..))")
+    public void connectionDB() {
+        System.out.println("Connected !");
+    }
 }

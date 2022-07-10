@@ -16,11 +16,13 @@ public class MainApp {
 
         PostDao pd = context.getBean("postDaoImpl", PostDao.class);
         User u = new User();
-        pd.allPosts(u);
-        System.out.println(pd.allLikes());
+        int id = 0;
 
+        pd.allPosts(u);
+        System.out.println(pd.allLikes(u, id));
+        System.out.println("/*************************/");
         PostService ps = context.getBean("postServiceImpl", PostService.class);
-        System.out.println(ps.allPosts());
+        System.out.println(ps.allPosts(u, id));
         System.out.println(ps.allLikes(u));
 
     }
