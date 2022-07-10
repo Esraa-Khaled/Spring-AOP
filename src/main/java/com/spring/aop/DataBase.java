@@ -37,7 +37,15 @@ public class DataBase {
     */
 
     // .. means for any param type even if not exist
+    /*
     @Before("execution(public * all*(com.spring.model.User, ..))")
+    public void connectionDB() {
+        System.out.println("Connected !");
+    }
+    */
+    //for any method in any class inside package com.spring.dao which take any
+    //number of arguments
+    @Before("execution(public * com.spring.dao.*.*(..))")
     public void connectionDB() {
         System.out.println("Connected !");
     }

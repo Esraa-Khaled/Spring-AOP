@@ -20,10 +20,13 @@ public class MainApp {
 
         pd.allPosts(u);
         System.out.println(pd.allLikes(u, id));
+        pd.funDao();
         System.out.println("/*************************/");
+
         PostService ps = context.getBean("postServiceImpl", PostService.class);
+
         System.out.println(ps.allPosts(u, id));
         System.out.println(ps.allLikes(u));
-
+        ps.startService();
     }
 }

@@ -15,4 +15,9 @@ public class PostServiceImpl implements  PostService{
     public String allLikes(User user) {
         return "PostService ..... Likes";
     }
+
+    @Override
+    public void startService() {
+        System.out.println("Start Service");
+    }
 }

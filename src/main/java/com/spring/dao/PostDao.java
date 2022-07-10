@@ -6,4 +6,6 @@ public interface PostDao {
     public void allPosts(User user);
 
     public String allLikes(User user, int id);
+
+    public void funDao();
 }
