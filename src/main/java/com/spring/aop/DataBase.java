@@ -2,6 +2,7 @@ package com.spring.aop;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 
@@ -43,10 +44,20 @@ public class DataBase {
         System.out.println("Connected !");
     }
     */
-    //for any method in any class inside package com.spring.dao which take any
-    //number of arguments
-    @Before("execution(public * com.spring.dao.*.*(..))")
+
+    //for any method in any class inside package com.spring.dao which take any number of arguments
+    @Before("allClassesAdvice()")
     public void connectionDB() {
         System.out.println("Connected !");
     }
+
+    @Before("allClassesAdvice()")
+    public void logIn() {
+        System.out.println("Log In ... true");
+    }
+
+    // make generic class holds execution expression than use it by name
+    @Pointcut("execution(public * com.spring.dao.*.*(..))")
+    public void allClassesAdvice() {}
+
 }
