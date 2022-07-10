@@ -21,8 +21,18 @@ public class DataBase {
     */
 
     // for methods which start by word all...
+    /*
     @Before("execution(public * all*())")
     public void connectionDB() {
         System.out.println("Connected !");
     }
+    */
+
+    // if method has params give its qualified paths
+    @Before("execution(public * all*(com.spring.model.User))")
+    public void connectionDB() {
+        System.out.println("Connected !");
+    }
+
+
 }
