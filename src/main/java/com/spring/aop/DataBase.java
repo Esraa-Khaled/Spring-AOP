@@ -45,7 +45,11 @@ public class DataBase {
     }
     */
 
-    //for any method in any class inside package com.spring.dao which take any number of arguments
+    // make generic class holds execution expression than use it by name
+    // for any method in any class inside package com.spring.dao which take any number of arguments
+    @Pointcut("execution(public * com.spring.dao.*.*(..))")
+    public void allClassesAdvice() {}
+    /*
     @Before("allClassesAdvice()")
     public void connectionDB() {
         System.out.println("Connected !");
@@ -55,9 +59,25 @@ public class DataBase {
     public void logIn() {
         System.out.println("Log In ... true");
     }
+    */
 
-    // make generic class holds execution expression than use it by name
-    @Pointcut("execution(public * com.spring.dao.*.*(..))")
-    public void allClassesAdvice() {}
+    @Pointcut("execution(public * com.spring.dao.*.set*(..))")
+    public void allSetters() {}
 
+    @Pointcut("execution(public * com.spring.dao.*.get*(..))")
+    public void allGetters() {}
+
+    //for all functions inside package "com.spring.dao" except setters and getters
+    @Pointcut("allClassesAdvice() && !(allGetters() || allSetters())")
+    public void allExceptGettersAndSetters() {}
+
+    @Before("allExceptGettersAndSetters()")
+    public void connectionDB() {
+        System.out.println("Connected !");
+    }
+
+    @Before("allExceptGettersAndSetters()")
+    public void logIn() {
+        System.out.println("Log In ... true");
+    }
 }

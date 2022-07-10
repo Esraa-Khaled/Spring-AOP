@@ -19,4 +19,14 @@ public class PostDaoImpl implements PostDao{
     public void funDao() {
         System.out.println("Fun Dao");
     }
+
+    @Override
+    public void setId() {
+        System.out.println("This is set Id");
+    }
+
+    @Override
+    public void getId() {
+        System.out.println("This is get Id");
+    }
 }

@@ -8,4 +8,8 @@ public interface PostDao {
     public String allLikes(User user, int id);
 
     public void funDao();
+
+    public void setId();
+
+    public void getId();
 }

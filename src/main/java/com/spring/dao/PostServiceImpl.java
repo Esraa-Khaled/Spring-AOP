@@ -20,4 +20,14 @@ public class PostServiceImpl implements  PostService{
     public void startService() {
         System.out.println("Start Service");
     }
+
+    @Override
+    public void setName() {
+        System.out.println("This is set Name");
+    }
+
+    @Override
+    public void getName() {
+        System.out.println("This is get Name");
+    }
 }

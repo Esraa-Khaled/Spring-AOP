@@ -21,6 +21,8 @@ public class MainApp {
         pd.allPosts(u);
         System.out.println(pd.allLikes(u, id));
         pd.funDao();
+        pd.setId();
+        pd.getId();
         System.out.println("/*************************/");
 
         PostService ps = context.getBean("postServiceImpl", PostService.class);
@@ -28,5 +30,7 @@ public class MainApp {
         System.out.println(ps.allPosts(u, id));
         System.out.println(ps.allLikes(u));
         ps.startService();
+        ps.setName();
+        ps.getName();
     }
 }
