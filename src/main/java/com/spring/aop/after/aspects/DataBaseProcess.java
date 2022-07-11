@@ -17,6 +17,7 @@ public class DataBaseProcess {
 
     // @AfterReturning will be executed before @After
     // if method is void then only @After will be executed
+    // if exception happens @After will be executed
     @AfterReturning("execution(* getStudent(..))")
     public void commitTransaction() {
         System.out.println("Commit Transaction.....");
