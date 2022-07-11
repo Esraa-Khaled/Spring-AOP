@@ -1,6 +1,6 @@
-package com.spring.dao;
+package com.spring.aop.wildcards.dao;
 
-import com.spring.model.User;
+import com.spring.aop.wildcards.model.User;
 
 public interface PostService {
     public String allPosts(User user, int id);

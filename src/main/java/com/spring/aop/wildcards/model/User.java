@@ -1,4 +1,4 @@
-package com.spring.model;
+package com.spring.aop.wildcards.model;
 
 public class User {
 

@@ -1,4 +1,4 @@
-package com.spring.aop;
+package com.spring.aop.wildcards.aspects;
 
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -31,7 +31,7 @@ public class DataBase {
 
     // if method has params give its qualified paths
     /*
-    @Before("execution(public * all*(com.spring.model.User))")
+    @Before("execution(public * all*(com.spring.aop.wildcards.model.User))")
     public void connectionDB() {
         System.out.println("Connected !");
     }
@@ -39,7 +39,7 @@ public class DataBase {
 
     // .. means for any param type even if not exist
     /*
-    @Before("execution(public * all*(com.spring.model.User, ..))")
+    @Before("execution(public * all*(com.spring.aop.wildcards.model.User, ..))")
     public void connectionDB() {
         System.out.println("Connected !");
     }
@@ -47,7 +47,7 @@ public class DataBase {
 
     // make generic class holds execution expression than use it by name
     // for any method in any class inside package com.spring.dao which take any number of arguments
-    @Pointcut("execution(public * com.spring.dao.*.*(..))")
+    @Pointcut("execution(public * com.spring.aop.wildcards.dao.*.*(..))")
     public void allClassesAdvice() {}
     /*
     @Before("allClassesAdvice()")
@@ -61,10 +61,10 @@ public class DataBase {
     }
     */
 
-    @Pointcut("execution(public * com.spring.dao.*.set*(..))")
+    @Pointcut("execution(public * com.spring.aop.wildcards.dao.*.set*(..))")
     public void allSetters() {}
 
-    @Pointcut("execution(public * com.spring.dao.*.get*(..))")
+    @Pointcut("execution(public * com.spring.aop.wildcards.dao.*.get*(..))")
     public void allGetters() {}
 
     //for all functions inside package "com.spring.dao" except setters and getters
